@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <div id="input">{{ output }}</div>
-    <div id="result">{{ result }}</div>
+    <div id="top">
+      <div id="screens">
+        <div id="input">{{ output }}</div>
+        <div id="result">{{ result }}</div>
+      </div>
+      <div id="clear" @click="clear">
+        CE
+      </div>
+    </div>
     <div id="keys">
       <div class="row">
         <key label="7" action="print" write="7" type="number"></key>
@@ -60,6 +67,11 @@ import Key from './components/Key.vue'
     },
 
     methods: {
+      clear(){
+        this.input = '';
+        this.output = '';
+      },
+
       del(){
         this.input = this.input.substring(0, this.input.length - 1);
         this.output = this.output.substring(0, this.output.length - 1);
@@ -79,8 +91,37 @@ import Key from './components/Key.vue'
     background-color: lightgrey;
   }
 
+  #top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #screens {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    flex: 1;
+  }
+
+  #clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    flex: 0 0 100px;
+    padding: 5px;
+    margin: 5px;
+    background-color: salmon;
+    border: 1px solid black;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2.5em;
+  }
+
   #input, #result {
-    width: 90%;
+    width: 98%;
     flex: 0 0 45px;
     padding: 10px;
     margin: 10px auto;
@@ -134,7 +175,7 @@ import Key from './components/Key.vue'
     background-color: lightcyan;
   }
 
-  .key:hover {
+  .key:hover, #clear:hover {
     background-color: black;
     color: white;
     font-weight: bold;
@@ -142,6 +183,20 @@ import Key from './components/Key.vue'
   }
 
   @media (max-height: 350px) {
+    #clear {
+      flex: 0 0 75px;
+      height: 75px;
+      padding: 2px;
+      margin: 5px;
+      font-size: 20px;
+    }
+
+    #input, #result {
+      flex: 0 0 30px;
+      padding: 5px;
+      font-size: 15px;
+    }
+
     .key {
       font-size: 1.5em ;
     }
