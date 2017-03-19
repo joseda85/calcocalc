@@ -1,5 +1,5 @@
 <template>
-  <div class="key" :class="type" @click="print">
+  <div class="key" :class="type" @click="launchAction">
     {{ label }}
   </div>
 </template>
@@ -7,9 +7,13 @@
 <script>
 export default {
   name: 'key',
-  props: ['label', 'output', 'write', 'type'],
+  props: ['label', 'action', 'output', 'write', 'make', 'type'],
 
   methods: {
+    launchAction(){
+      eval('this.' + this.action + '()');
+    },
+
     print(){
       if (this.output != undefined){
         this.$parent.output += this.output;
@@ -19,9 +23,12 @@ export default {
       }
 
       this.$parent.input += this.write;
+    },
+
+    do(){
+      eval('this.$parent.'+this.make);
     }
   }
-
 }
 </script>
 

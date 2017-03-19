@@ -4,28 +4,28 @@
     <div id="result">{{ result }}</div>
     <div id="keys">
       <div class="row">
-        <key label="7" write="7" shortkey="7" type="number"></key>
-        <key label="8" write="8" shortkey="8" type="number"></key>
-        <key label="9" write="9" shortkey="9" type="number"></key>
-        <key label="/" write="/" shortkey="/" type="operation"></key>
+        <key label="7" action="print" write="7" type="number"></key>
+        <key label="8" action="print" write="8" type="number"></key>
+        <key label="9" action="print" write="9" type="number"></key>
+        <key label="/" action="print" write="/" type="operation"></key>
       </div>
       <div class="row">
-        <key label="4" write="4" shortkey="4" type="number"></key>
-        <key label="5" write="5" shortkey="5" type="number"></key>
-        <key label="6" write="6" shortkey="6" type="number"></key>
-        <key label="x" output="x" write="*" shortkey="*" type="operation"></key>
+        <key label="4" action="print" write="4" type="number"></key>
+        <key label="5" action="print" write="5" type="number"></key>
+        <key label="6" action="print" write="6" type="number"></key>
+        <key label="x" output="x" action="print" write="*" type="operation"></key>
       </div>
       <div class="row">
-        <key label="1" write="1" shortkey="1" type="number"></key>
-        <key label="2" write="2" shortkey="2" type="number"></key>
-        <key label="3" write="3" shortkey="3" type="number"></key>
-        <key label="-" write="-" shortkey="-" type="operation"></key>
+        <key label="1" action="print" write="1" type="number"></key>
+        <key label="2" action="print" write="2" type="number"></key>
+        <key label="3" action="print" write="3" type="number"></key>
+        <key label="-" action="print" write="-" type="operation"></key>
       </div>
       <div class="row">
-        <key label="0" write="0" shortkey="0" type="number"></key>
-        <key label="." write="." shortkey="." type="special"></key>
-        <action-key label="DEL" action="del()" type="special"></action-key>
-        <key label="+" write="+" shortkey="+" type="operation"></key>
+        <key label="0" action="print" write="0" type="number"></key>
+        <key label="." action="print" write="." type="special"></key>
+        <key label="DEL" action="do" make="del()" type="special"></key>
+        <key label="+" action="print" write="+" type="operation"></key>
       </div>
     </div>
   </div>
@@ -33,11 +33,10 @@
 
 <script>
 import Key from './components/Key.vue'
-import ActionKey from './components/ActionKey.vue'
 
   export default {
     name: 'app',
-    components: { Key, ActionKey },
+    components: { Key },
 
     data() {
       return {
