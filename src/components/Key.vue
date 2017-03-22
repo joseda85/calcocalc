@@ -1,13 +1,13 @@
 <template>
   <div class="key" :class="type" @click="launchAction">
-    {{ label }}
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
   name: 'key',
-  props: ['label', 'action', 'output', 'write', 'make', 'type'],
+  props: ['action', 'output', 'write', 'make', 'type'],
 
   methods: {
     launchAction(){

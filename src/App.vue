@@ -5,34 +5,36 @@
         <div id="input">{{ output }}</div>
         <div id="result">{{ result }}</div>
       </div>
-      <div id="clear" @click="clear">
-        CE
-      </div>
+      <div id="clear" @click="clear">CE</div>
     </div>
     <div id="keys">
       <div class="row">
-        <key label="7" action="print" write="7" type="number"></key>
-        <key label="8" action="print" write="8" type="number"></key>
-        <key label="9" action="print" write="9" type="number"></key>
-        <key label="/" action="print" write="/" type="operation"></key>
+        <key action="print" write="(" type="special">(</key>
+        <key action="print" write=")" type="special">)</key>
       </div>
       <div class="row">
-        <key label="4" action="print" write="4" type="number"></key>
-        <key label="5" action="print" write="5" type="number"></key>
-        <key label="6" action="print" write="6" type="number"></key>
-        <key label="x" output="x" action="print" write="*" type="operation"></key>
+        <key action="print" write="7" type="number">7</key>
+        <key action="print" write="8" type="number">8</key>
+        <key action="print" write="9" type="number">9</key>
+        <key action="print" write="/" type="operation">/</key>
       </div>
       <div class="row">
-        <key label="1" action="print" write="1" type="number"></key>
-        <key label="2" action="print" write="2" type="number"></key>
-        <key label="3" action="print" write="3" type="number"></key>
-        <key label="-" action="print" write="-" type="operation"></key>
+        <key action="print" write="4" type="number">4</key>
+        <key action="print" write="5" type="number">5</key>
+        <key action="print" write="6" type="number">6</key>
+        <key output="x" action="print" write="*" type="operation">x</key>
       </div>
       <div class="row">
-        <key label="0" action="print" write="0" type="number"></key>
-        <key label="." action="print" write="." type="special"></key>
-        <key label="DEL" action="do" make="del()" type="special"></key>
-        <key label="+" action="print" write="+" type="operation"></key>
+        <key action="print" write="1" type="number">1</key>
+        <key action="print" write="2" type="number">2</key>
+        <key action="print" write="3" type="number">3</key>
+        <key action="print" write="-" type="operation">-</key>
+      </div>
+      <div class="row">
+        <key action="print" write="0" type="number">0</key>
+        <key action="print" write="." type="special">.</key>
+        <key action="do" make="del()" type="special">DEL</key>
+        <key action="print" write="+" type="operation">+</key>
       </div>
     </div>
   </div>
